@@ -8,3 +8,287 @@ $fa-font-path:"~fa/../webfonts";
 @import "~fa/regular.scss";
 @import "~fa/brands.scss";
 
+/**********************************************
+    UTILITYS - GENERAL
+***********************************************/
+$bg-dark: #1c1c1c;
+$blue: #0282f9;
+$white: #ffffff;
+$txt-dark: #414543;
+$text-light: #838480;
+$footer-bg: #303030;
+$footer-icons: #797979;
+$footer-blue: #0086fe;
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $bg-dark;
+    color: $white;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.active{
+    color: $blue;
+}
+.my-btn{
+    text-transform: uppercase;
+    background-color: $blue;
+    color: $white;
+    width: 200px;
+    height: 40px;
+    font-size: .85rem;
+    font-weight: 700;
+    margin: 1.5rem 0;
+}
+.relative{
+    position: relative;
+}
+/**********************************************
+    HEADER
+***********************************************/
+.top-header{
+    background-color: $blue;
+    padding: .25rem 0;    width: 100%;
+
+    ul{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 0;
+
+        li{
+            text-transform: uppercase;
+            font-size: .75rem;
+            font-weight: 700;
+            margin-left: 4rem;
+        }
+    }
+}
+header{
+    background-color: $white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    ul{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+       
+        li{
+            margin-right: 2rem;
+            text-transform: uppercase;
+
+            a{
+                color: $txt-dark;
+                font-size: .95rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+.logo{
+    width: 70px;
+    vertical-align: middle;
+    img{
+        width: 100%;
+    }
+}
+.search-header{
+    border: none;
+    border-bottom: 3px solid $blue;
+    outline: none;
+    width: 150px;
+    font-family: inherit;
+    font-size: 16px;
+    font-size: max(16px, 1rem);
+    padding: 0.25em 0.5em;
+    line-height: 1;
+    height: 2.25rem;
+}
+input::placeholder {
+    text-align: end;
+    color: $txt-dark;
+    font-weight: 700;
+    font-size: 16px;
+
+}
+.fa-magnifying-glass{
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    color: $txt-dark;
+   
+}
+/**********************************************
+    COMICS
+***********************************************/
+.jumbotron{
+    height: 440px;
+    background-image: url(../img/jumbotron.jpg);
+    background-color: $blue;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#current-series{
+    position: relative;
+        a{
+            color: $white;
+
+            & :hover{
+                color: $blue;
+            }
+        }
+       
+}
+.section-titol{
+    background-color: $blue;
+    padding: .75rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+.comic-title{
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    font-weight: 500;
+    font-size: .85rem;
+}
+.shop{
+    height: 153px;
+    width: 100%;
+    background-color: $blue;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+    }
+    img{
+        width: 3.2rem;
+        margin-right: 1rem;
+    }
+    .digital-comics img{
+        width: 2.7rem;
+    }
+    .shop-locator img{
+        width: 2.1rem;
+    }
+    span{
+        text-transform: uppercase;
+        font-size: .85rem;
+    }
+}
+/**********************************************
+    FOOTER
+***********************************************/
+.top-footer{
+    height: 440px;
+    background-image: url(../img//footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    nav{
+        display: flex;
+        padding-top: 2rem;
+        .R-nav{
+            
+            ul{
+                margin-top: 1rem;
+                padding: 0;
+            }
+           
+        }
+        .next-nav{
+            display: flex;
+            ul{
+                margin-top: 1rem;
+            }
+        }
+        li a{
+            color: $white;
+            opacity: .5;
+            font-size: .75rem;
+            &:hover{
+                    text-decoration: underline;
+            }
+        }
+        h4{
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-bottom: .75rem;
+        }
+    }
+    .disclaimer{
+        color: $footer-icons;
+        font-weight: 600;
+        font-size: .75rem;
+    }
+    .footer-link{
+        color: $footer-blue;
+        opacity: 1;
+    }
+    .dc-logo-footer{
+        position: absolute;
+        right: 0;
+        top: -4rem;
+        transform: scale(1.1);
+    }
+}
+.bottom-footer{
+    padding: 2rem 0;
+    background-color: $footer-bg;
+    button{
+        background-color: transparent;
+        border: 3px solid $footer-blue;
+        padding: .75rem;
+        color: $white;
+        cursor: pointer;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .icon-links{
+        display: flex;
+        align-items: center;
+        img{
+            width: 2rem;
+            margin-left: 1rem;
+        }
+            span{
+            text-transform: uppercase;
+            color: $footer-blue;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-right: .75rem;
+        }
+    }
+}
