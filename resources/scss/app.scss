@@ -38,9 +38,6 @@ ul{
 a{
     text-decoration: none;
 }
-.active{
-    color: $blue;
-}
 .my-btn{
     text-transform: uppercase;
     background-color: $blue;
@@ -103,7 +100,16 @@ header{
                 color: $txt-dark;
                 font-size: .95rem;
                 font-weight: 700;
+
+                &:hover{
+                    color: $blue;
+                }
             }
+
+            a.active{
+                color: $blue;
+            }
+            
         }
     }
 }
@@ -292,3 +298,6 @@ input::placeholder {
         }
     }
 }
+
+
+

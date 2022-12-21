@@ -11,7 +11,6 @@ class ComicController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -22,7 +21,6 @@ class ComicController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -33,26 +31,29 @@ class ComicController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         // dd($request->all());
         $formData = $request->all();
+        // dd($formData);
         $newComic = new Comic();
+
         $newComic->title = $formData['title'];
         $newComic->description = $formData['description'];
-        $newComic->thumb = $formData['image'];
+        $newComic->image = $formData['image'];
         $newComic->price = $formData['price'];
         $newComic->series = $formData['series'];
         $newComic->sale_date = $formData['sale_date'];
         $newComic->type = $formData['type'];
-        $newComic->artists = $formData['artist'];
-        $newComic->writers = $formData['writer'];
+        $newComic->artist = $formData['artist'];
+        $newComic->writer = $formData['writer'];
 
         $newComic->save();
 
         return redirect()->route('comics.show', $newComic->id);
+        // return redirect()->route('comics.index');
+
 
     }
 
@@ -60,7 +61,6 @@ class ComicController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show(Comic $comic) //$id se uso una delle due opzioni commentate sotto
 
@@ -77,7 +77,6 @@ class ComicController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -85,12 +84,12 @@ class ComicController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  int  $id
+    
+    */
     public function update(Request $request, $id)
     {
         //
@@ -100,7 +99,6 @@ class ComicController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
