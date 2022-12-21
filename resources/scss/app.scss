@@ -12,6 +12,7 @@ $fa-font-path:"~fa/../webfonts";
     UTILITYS - GENERAL
 ***********************************************/
 $bg-dark: #1c1c1c;
+$bg-light: #f6f6f6;
 $blue: #0282f9;
 $white: #ffffff;
 $txt-dark: #414543;
@@ -155,6 +156,42 @@ input::placeholder {
     // background-color: $blue;
     background-size: cover;
     background-repeat: no-repeat;
+}
+.comic-jumbotron{
+    height: 340px;
+    overflow: hidden;
+   
+
+    img{
+        width: 100%;
+        margin-top: -30%;
+        filter: blur(5px);
+    }
+}
+.blue_divider{
+    background-color: $blue;
+    height: 100px;
+    position: relative;
+}
+.comic-cover{
+    position: absolute;
+    bottom: 20px;
+    left: 400px;
+    border: 1px solid $white;
+}
+#comic-infos{
+    background-color: $white;
+    color: $txt-dark;
+  
+    h1{
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .info-bottom{
+        background-color: $bg-light;
+        border: 1px solid lightgrey;
+    }
 }
 #current-series{
     position: relative;
