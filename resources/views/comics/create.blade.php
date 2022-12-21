@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('main_content')
     <section class="container">
+        <h1 class="text-center mt-3">Add</h1>
        <form action="{{route('comics.store')}}" method="POST">
         {{-- da mettere sempre in ogni form per sicurezza! affinchè Laravel si accerti che la chiamata al server venga dal nostro sito e non da terze parti --}}
              @csrf
