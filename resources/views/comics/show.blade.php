@@ -54,12 +54,14 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{route('comics.edit', $comic->id)}}"><button class="my-btn">Edit</button></a>
-                <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="my-btn">Delete</button>
-                </form>          
+                <div class="btns-actions d-flex mt-5">
+                    <a href="{{route('comics.edit', $comic->id)}}"><button class="my-btn me-3">Edit</button></a>
+                    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="my-btn">Delete</button>
+                    </form> 
+                </div>         
             </div>
         </div>
     </section>
