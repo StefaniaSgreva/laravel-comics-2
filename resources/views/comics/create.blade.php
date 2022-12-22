@@ -7,7 +7,10 @@
              @csrf
 
             <label for="title" class="form-label my-3">Title</label>
-            <input type="text" name="title" id="title" class="form-control" required>
+            <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror">
+            @error('title') 
+                 <div class="invalid-feedback ">{{$message}}</div>{{--message viene da lang dove sono scritti tutti i msg in eng di error --}}
+            @enderror
 
             <label for="description" class="form-label my-3">Description</label>
             <textarea type="text" name="description" id="description" rows="3" class="form-control"></textarea>
