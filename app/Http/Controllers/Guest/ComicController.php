@@ -123,6 +123,6 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('message', "Il tuo prodotto con id: {$comic->id} è stato cancellato con successo!"); //ricordare apici doppi per interpolazione di PHP!
     }
 }

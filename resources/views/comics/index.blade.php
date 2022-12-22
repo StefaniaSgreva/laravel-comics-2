@@ -3,6 +3,11 @@
     <div class="jumbotron"></div>
     <section id="current-series" class="container text-center">
         <h2 class="section-titol">Current Series</h2>
+        @if(session()->has('message'))
+            <div class="alert alert-success mt-5 mb-3 w-75 mx-auto">
+                {{session()->get('message')}}
+            </div>
+         @endif
         <div class="row pt-5 mb-2">
             @foreach ($comics as $comic)
                 <div class="col-2 my-3">
